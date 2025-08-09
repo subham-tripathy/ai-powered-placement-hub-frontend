@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/assets/bootstrap.min.css">
+  <title>AI Powered Placement Hub</title>
+</head>
+
+<body>
+  <main id="root"></main>
+  <script>
+    function updateTheme() {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const newTheme = prefersDark ? 'dark' : 'light';
+      if (currentTheme !== newTheme) {
+        document.documentElement.setAttribute('data-bs-theme', newTheme);
+      }
+    }
+    updateTheme();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+  </script>
+  <script type="module" src="./src/main.jsx"></script>
+</body>
+
+</html>
