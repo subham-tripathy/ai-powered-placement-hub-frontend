@@ -1,1 +1,1 @@
-export const backendURL = "http://localhost:3000"
+export const backendURL = "https://9b668b82-e77d-4bd7-9eae-f1e9e3e25fe1-00-3mqiob0ylj9o9.sisko.replit.dev:3000"

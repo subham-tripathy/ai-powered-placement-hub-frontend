@@ -5,5 +5,5 @@ export default function App() {
     <div>
       <HeroSection />
     </div>
-  )
+  );
 }
