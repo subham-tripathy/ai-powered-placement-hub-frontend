@@ -1,1 +1,11 @@
-export const backendURL = "https://9b668b82-e77d-4bd7-9eae-f1e9e3e25fe1-00-3mqiob0ylj9o9.sisko.replit.dev:3000"
+export const backendURL = "http://localhost:3000";
+
+export function validateEmail(email) {
+  if (typeof email !== "string") return false;
+
+  const value = email.trim();
+  if (value.length < 3) return false;
+
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  return re.test(value);
+}

@@ -4,7 +4,7 @@ import { backendURL } from "./functions";
 import { toast } from "react-toastify";
 
 export default function Register() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [companyName, setCompanyName] = useState("");
   const [companyId, setCompanyId] = useState("");
   const [companyEmail, setCompanyEmail] = useState("");
@@ -27,8 +27,8 @@ export default function Register() {
       }),
     });
     const data = await response.json();
-    createCookie("token", data.token, 1)
-    if (data.status == "success"){
+    createCookie("token", data.token, 1);
+    if (data.status == "success") {
       toast.success("Company registered successfully");
       navigate("/");
     }
@@ -37,8 +37,8 @@ export default function Register() {
     <div>
       <>
         <form
-          style={{ width: "50%" }}
-          className="form mx-auto text-center border p-4 pt-2 shadow rounded mt-5"
+          style={{ width: "55%" }}
+          className="mt-5 border border-2 border-primary shadow form mx-auto text-center p-5 pt-4 rounded"
         >
           <h1 className="text-center underline">Company Sign Up</h1>
           <input
@@ -77,7 +77,6 @@ export default function Register() {
           />
           <br />
           <div className="d-flex justify-content-between">
-            <Link to={"/forgot-password"}>Forgot Password?</Link>
             <Link to={"/login"}>Already have an account?</Link>
           </div>
           <br />

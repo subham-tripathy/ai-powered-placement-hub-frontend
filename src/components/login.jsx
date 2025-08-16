@@ -18,46 +18,44 @@ export default function Login() {
     }
   };
   return (
-    <>
-      <form
-        style={{ width: "50%" }}
-        className="form mx-auto text-center border p-4 pt-2 shadow rounded mt-5"
+    <form
+      style={{ width: "55%" }}
+      className="mt-5 border border-2 border-primary shadow form mx-auto text-center p-5 pt-4 rounded"
+    >
+      <h1 className="text-center underline">Log In</h1>
+      <input
+        value={id}
+        onChange={(e) => {
+          setid(e.target.value);
+        }}
+        type="text"
+        className="form-control"
+        placeholder="Enter ID:"
+      />
+      <br />
+      <input
+        value={pw}
+        onChange={(e) => {
+          setpw(e.target.value);
+        }}
+        type="password"
+        className="form-control"
+        placeholder="Enter Password:"
+      />
+      <br />
+      <div className="d-flex justify-content-between">
+        <Link to={"/register"}>Create New Account</Link>
+        <Link to={"/forgot-password"}>Forgot Password?</Link>
+      </div>
+      <br />
+      <button
+        onClick={handleSubmit}
+        style={{ width: "100%" }}
+        className="btn btn-primary"
       >
-        <h1 className="text-center underline">Log In</h1>
-        <input
-          value={id}
-          onChange={(e) => {
-            setid(e.target.value);
-          }}
-          type="text"
-          className="form-control"
-          placeholder="Enter ID:"
-        />
-        <br />
-        <input
-          value={pw}
-          onChange={(e) => {
-            setpw(e.target.value);
-          }}
-          type="password"
-          className="form-control"
-          placeholder="Enter Password:"
-        />
-        <br />
-        <div className="d-flex justify-content-between">
-          <Link to={"/forgot-password"}>Forgot Password?</Link>
-          <Link to={"/register"}>Create New Account</Link>
-        </div>
-        <br />
-        <button
-          onClick={handleSubmit}
-          style={{ width: "100%" }}
-          className="btn btn-primary"
-        >
-          Login
-        </button>
-        <br />
-      </form>
-    </>
+        Login
+      </button>
+      <br />
+    </form>
   );
 }
