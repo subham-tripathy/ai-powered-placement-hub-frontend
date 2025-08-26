@@ -1,13 +1,19 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { backendURL } from "./functions";
 
 export default function Login() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("placementHubUser") != null)
+      navigate("/")
+  }, [])
+
   const [id, setid] = useState("");
   const [pw, setpw] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log();
     if (id == "") {
       toast.error("Enter ID");
       return;
@@ -16,6 +22,22 @@ export default function Login() {
       toast.error("Enter Password");
       return;
     }
+    fetch(`${backendURL}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: id,
+        pw: pw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status == "success") {
+          localStorage.setItem("placementHubUser", data.token);
+          toast.success("Logged in successful");
+          navigate("/");
+        }
+      });
   };
   return (
     <form

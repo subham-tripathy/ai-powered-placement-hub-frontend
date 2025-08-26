@@ -1,19 +1,23 @@
 import { useState } from "react";
-import { createCookie, Link, useNavigate } from "react-router-dom";
-import { backendURL } from "./functions";
+import { Link, useNavigate } from "react-router-dom";
+import { backendURL, validateEmail } from "./functions";
 import { toast } from "react-toastify";
 
 export default function Register() {
   const navigate = useNavigate();
+  if (localStorage.getItem("placementHubUser") != null) navigate("/dashboard");
   const [companyName, setCompanyName] = useState("");
   const [companyId, setCompanyId] = useState("");
   const [companyEmail, setCompanyEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(companyName, companyId, companyEmail, password);
     if (!companyName || !companyId || !companyEmail || !password)
       return toast.error("Please fill all the fields");
+    if (password.length < 6)
+      return toast.error("Password must be at least 6 characters");
+    if (!validateEmail(companyEmail))
+      return toast.error("Please enter a valid email");
     const response = await fetch(`${backendURL}/signup`, {
       method: "POST",
       headers: {
@@ -27,8 +31,8 @@ export default function Register() {
       }),
     });
     const data = await response.json();
-    createCookie("token", data.token, 1);
     if (data.status == "success") {
+      localStorage.setItem("placementHubUser", data.token);
       toast.success("Company registered successfully");
       navigate("/");
     }

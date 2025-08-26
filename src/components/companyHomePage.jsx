@@ -20,7 +20,7 @@ export default function CompanyHomePage() {
         }}
       >
         {functionalties.map((item) => {
-          return <CompanyHomePageCard title={item.title} url={item.url} />;
+          return <CompanyHomePageCard key={item.title} title={item.title} url={item.url} />;
         })}
       </div>
     </main>
