@@ -11,6 +11,8 @@ export default function CompanyHomePage() {
       url: "/company/createPost",
     },
   ];
+
+  
   return (
     <main className="p-3">
       <div

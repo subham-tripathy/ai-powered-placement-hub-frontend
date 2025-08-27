@@ -12,8 +12,8 @@ import Home from "./components/home.jsx";
 import SearchStudent from "./components/companySearchStudent.jsx";
 import SearchStudentResult from "./components/companySearchStudentResult.jsx";
 import ForgetPW from "./components/forgotpw.jsx";
-import CompanyHomePage from "./components/companyhomepage.jsx";
 import { LogOut } from "./Logout.jsx";
+import CompanyHomePage from "./components/companyHomePage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
