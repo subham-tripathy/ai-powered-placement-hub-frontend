@@ -13,6 +13,7 @@ import SearchStudent from "./components/companySearchStudent.jsx";
 import SearchStudentResult from "./components/companySearchStudentResult.jsx";
 import ForgetPW from "./components/forgotpw.jsx";
 import CompanyHomePage from "./components/companyhomepage.jsx";
+import { LogOut } from "./Logout.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")).render(
       <Route path="/companyhome" element={<CompanyHomePage />} />
       <Route path="/company/searchStudent" element={<SearchStudent />} />
       <Route path="/company/searchStudentResult" element={<SearchStudentResult />} />
+      <Route path="/logout" element={<LogOut />} />
       <Route path="/forgot-password" element={<ForgetPW />} />
       <Route
         path="/company/searchStudentResult"
