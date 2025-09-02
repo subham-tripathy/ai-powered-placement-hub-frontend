@@ -204,8 +204,9 @@ export default function NavBar() {
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
-                <button
+                <Link
                   key={item.name}
+                  to={item.path}
                   className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg transition-all duration-300 ${
                     isDark
                       ? "text-slate-300 hover:text-white hover:bg-slate-700/50"
@@ -214,7 +215,7 @@ export default function NavBar() {
                 >
                   <Icon className="w-5 h-5" />
                   <span className="font-medium">{item.name}</span>
-                </button>
+                </Link>
               );
             })}
 
