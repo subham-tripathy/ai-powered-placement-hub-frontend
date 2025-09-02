@@ -1,13 +1,14 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import SearchStudentResultCard from "./companySearchStudentResultCard";
 import { useEffect, useState } from "react";
-import { students } from "./functions";
+import { backendURL } from "./functions";
 
 export default function SearchStudentResult() {
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const [sid, setSID] = useState("");
+  const [student, setStudents] = useState(null);
 
   useEffect(() => {
     const id = params.get("sid");
@@ -16,7 +17,8 @@ export default function SearchStudentResult() {
     } else {
       navigate("/");
     }
-  }, [location.search, navigate]);
+    setStudents(findStudent(id))
+  }, []);
 
   const filteredStudents = students.filter(
     (item) => item.rollNo === sid || item.regnNo === sid

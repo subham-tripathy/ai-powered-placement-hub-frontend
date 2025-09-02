@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client";
+import "./global.css";
 import App from "./App.jsx";
 import NavBar from "./components/navbar.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -12,9 +13,9 @@ import Home from "./components/home.jsx";
 import SearchStudent from "./components/companySearchStudent.jsx";
 import SearchStudentResult from "./components/companySearchStudentResult.jsx";
 import ForgetPW from "./components/forgotpw.jsx";
-import { LogOut } from "./Logout.jsx";
 import CompanyHomePage from "./components/companyHomePage.jsx";
 import CompanyAddPost from "./components/companyAddPost.jsx";
+import About from "./components/about.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -32,12 +33,12 @@ createRoot(document.getElementById("root")).render(
         element={<SearchStudentResult />}
       />
       <Route path="/company/createPost" element={<CompanyAddPost />} />
-      <Route path="/logout" element={<LogOut />} />
       <Route path="/forgot-password" element={<ForgetPW />} />
       <Route
         path="/company/searchStudentResult"
         element={<SearchStudentResult />}
       />
+      <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
