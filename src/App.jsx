@@ -6,16 +6,15 @@ import { useNavigate } from "react-router-dom";
 export default function App() {
   const navigate = useNavigate();
   useEffect(() => {
-    const user = localStorage.getItem("placementHubUser")
+    const user = localStorage.getItem("placementHubUser");
     if (user != null) {
       const decodedUser = jwtDecode(user);
-      if (decodedUser.role == "company")
-        navigate("/companyhome")
+      if (decodedUser.role == "company") navigate("/companyhome");
     }
-  }, [])
+  }, []);
   return (
-    <div>
+    <>
       <HeroSection />
-    </div>
+    </>
   );
 }

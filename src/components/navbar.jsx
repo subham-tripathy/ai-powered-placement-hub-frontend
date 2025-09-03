@@ -64,7 +64,7 @@ export default function NavBar() {
   ];
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`h-16 sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? isDark
             ? "bg-slate-900/95 backdrop-blur-lg border-slate-700/50 shadow-2xl"
@@ -168,7 +168,13 @@ export default function NavBar() {
                 } shadow-lg hover:shadow-xl`}
               >
                 <User className="w-4 h-4" />
-                <span className="font-medium">Sign In</span>
+                <Link
+                  to={"/login"}
+                  style={{ textDecoration: "none" }}
+                  className="text-white font-medium"
+                >
+                  Sign In
+                </Link>
               </button>
             )}
           </div>
