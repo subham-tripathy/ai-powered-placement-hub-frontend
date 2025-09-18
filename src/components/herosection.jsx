@@ -149,14 +149,15 @@ export default function HeroSection() {
               </span>
             </Link>
 
-            <button
-              className={`px-8 py-4 rounded-full font-semibold text-lg border-2 transition-all duration-300 hover:scale-105 ${isDark
+            <Link
+              to={"/about"}
+              className={`px-8 py-4 font-semibold text-lg border-2 transition-all duration-300 hover:scale-105 ${isDark
                 ? "border-white/30 text-white hover:bg-white/10 hover:border-white/50"
                 : "border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400"
                 }`}
             >
               Learn More
-            </button>
+            </Link>
           </div>
 
           {/* Stats */}

@@ -151,7 +151,7 @@ export default function Login() {
               <input
                 type="text"
                 value={id}
-                onChange={(e) => setId(e.target.value)}
+                onChange={(e) => setid(e.target.value)}
                 onFocus={() => setFocusedField("id")}
                 onBlur={() => setFocusedField("")}
                 className={`w-full pl-10 pr-4 py-3 rounded-lg transition-all duration-300 ${
@@ -190,7 +190,7 @@ export default function Login() {
               <input
                 type={showPassword ? "text" : "password"}
                 value={pw}
-                onChange={(e) => setPw(e.target.value)}
+                onChange={(e) => setpw(e.target.value)}
                 onFocus={() => setFocusedField("password")}
                 onBlur={() => setFocusedField("")}
                 className={`w-full pl-10 pr-12 py-3 rounded-lg transition-all duration-300 ${
