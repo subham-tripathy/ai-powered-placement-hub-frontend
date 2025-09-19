@@ -16,6 +16,8 @@ import ForgetPW from "./components/forgotpw.jsx";
 import CompanyHomePage from "./components/companyHomePage.jsx";
 import CompanyAddPost from "./components/companyAddPost.jsx";
 import About from "./components/about.jsx";
+import StudentHomePage from "./components/StudentHome.jsx";
+import TnPHomePage from "./components/tnpHomePage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -26,7 +28,9 @@ createRoot(document.getElementById("root")).render(
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/studenthome" element={<StudentHomePage />} />
       <Route path="/companyhome" element={<CompanyHomePage />} />
+      <Route path="/tnphome" element={<TnPHomePage />} />
       <Route path="/company/searchStudent" element={<SearchStudent />} />
       <Route
         path="/company/searchStudentResult"
