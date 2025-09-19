@@ -33,10 +33,17 @@ export default function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.status == "success") {
-          localStorage.setItem("placementHubUser", data.token);
-          toast.success("Logged in successful");
-          navigate("/");
+        switch (data.status) {
+          case "success":
+            localStorage.setItem("placementHubUser", data.token);
+            toast.success("Logged in successful");
+            navigate("/");
+            break;
+          case "noAcc":
+            toast.error("No Account Found");
+            break;
+          case "pwError":
+            toast.error("Incorrect Password");
         }
       });
   };

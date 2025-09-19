@@ -160,22 +160,23 @@ export default function NavBar() {
                 </div>
               </>
             ) : (
-              <button
-                className={`flex items-center space-x-2 px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 transform ${
+              <Link
+                to={"/login"}
+                style={{ textDecoration: "none" }}
+                className={` flex items-center space-x-2 px-6 py-2 transition-all duration-300 hover:scale-105 transform ${
                   isDark
                     ? "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 text-white"
                     : "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white"
                 } shadow-lg hover:shadow-xl`}
               >
                 <User className="w-4 h-4" />
-                <Link
-                  to={"/login"}
+                <span
                   style={{ textDecoration: "none" }}
                   className="text-white font-medium"
                 >
                   Sign In
-                </Link>
-              </button>
+                </span>
+              </Link>
             )}
           </div>
 
