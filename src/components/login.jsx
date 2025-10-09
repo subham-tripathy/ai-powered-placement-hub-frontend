@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Eye, EyeOff, User, Lock, Mail, X, Send } from "lucide-react";
 import { toast } from "react-toastify";
+import {Link} from "react-router-dom"
 
 const backendURL = "https://your-backend-url.com"; // Replace with your actual backend URL
 
@@ -175,7 +176,7 @@ export default function Login() {
                 isDark ? "text-slate-300" : "text-slate-700"
               }`}
             >
-              Student ID / Email
+              User ID / Email
             </label>
             <div className="relative">
               <div
@@ -263,17 +264,16 @@ export default function Login() {
 
           {/* Links */}
           <div className="flex items-center justify-between text-sm">
-            <button
-              type="button"
-              onClick={() => alert("Redirect to register page")}
-              className={`font-medium transition-colors duration-200 ${
+            <Link
+            to={"/register"}
+              className={`invisible font-medium transition-colors duration-200 ${
                 isDark
                   ? "text-blue-400 hover:text-blue-300"
                   : "text-blue-600 hover:text-blue-700"
               }`}
             >
               Create New Account
-            </button>
+            </Link>
             <button
               type="button"
               onClick={() => setShowForgotPassword(true)}

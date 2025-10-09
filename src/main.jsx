@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./components/notfounds.jsx";
 import Register from "./components/register.jsx";
-import "./assets/bootstrap-5.3.7-dist/js/bootstrap.bundle.min";
 import Home from "./components/home.jsx";
 import SearchStudent from "./components/companySearchStudent.jsx";
 import SearchStudentResult from "./components/companySearchStudentResult.jsx";
@@ -26,7 +25,7 @@ createRoot(document.getElementById("root")).render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      {/* <Route path="/register" element={<Register />} /> */}
       <Route path="/home" element={<Home />} />
       <Route path="/studenthome" element={<StudentHomePage />} />
       <Route path="/companyhome" element={<CompanyHomePage />} />
